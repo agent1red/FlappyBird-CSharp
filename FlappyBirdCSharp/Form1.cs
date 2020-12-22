@@ -19,6 +19,7 @@ namespace FlappyBirdCSharp
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void gameTimerEvent(object sender, EventArgs e)
@@ -28,11 +29,11 @@ namespace FlappyBirdCSharp
             pipeBottom.Left -= pipeSpeed;
             pipeTop.Left -= pipeSpeed;
             scoreText.Text = "Score: " + score;
-            scoreText.BackColor = Color.Transparent;
+            
 
             if (pipeBottom.Left < -150)
             {
-                pipeBottom.Left = randomNum.Next(450, 750);
+                pipeBottom.Left = randomNum.Next(650, 950);
                 score++;
             }
 
@@ -42,9 +43,13 @@ namespace FlappyBirdCSharp
                 score++;
             }
 
+          
+
             if (bird.Bounds.IntersectsWith(pipeBottom.Bounds) || 
                 bird.Bounds.IntersectsWith(pipeTop.Bounds) || 
-                bird.Bounds.IntersectsWith(ground.Bounds))
+                bird.Bounds.IntersectsWith(ground.Bounds)|| 
+                bird.Top < -25) 
+                
             {
                 endGame();
             }
@@ -73,9 +78,10 @@ namespace FlappyBirdCSharp
             scoreText.Text += " Game Over!!!";
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
+            scoreText.Parent = ground;
+            scoreText.BackColor = Color.Transparent;
         }
     }
 }

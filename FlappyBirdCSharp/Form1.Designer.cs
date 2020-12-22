@@ -35,10 +35,12 @@
             this.ground = new System.Windows.Forms.PictureBox();
             this.scoreText = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.scoreBackground = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ground)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoreBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // bird
@@ -54,9 +56,9 @@
             // pipeTop
             // 
             this.pipeTop.Image = global::FlappyBirdCSharp.Properties.Resources.pipedown;
-            this.pipeTop.Location = new System.Drawing.Point(598, -23);
+            this.pipeTop.Location = new System.Drawing.Point(436, -29);
             this.pipeTop.Name = "pipeTop";
-            this.pipeTop.Size = new System.Drawing.Size(100, 214);
+            this.pipeTop.Size = new System.Drawing.Size(100, 181);
             this.pipeTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeTop.TabIndex = 1;
             this.pipeTop.TabStop = false;
@@ -64,7 +66,7 @@
             // pipeBottom
             // 
             this.pipeBottom.Image = global::FlappyBirdCSharp.Properties.Resources.pipe;
-            this.pipeBottom.Location = new System.Drawing.Point(598, 361);
+            this.pipeBottom.Location = new System.Drawing.Point(327, 408);
             this.pipeBottom.Name = "pipeBottom";
             this.pipeBottom.Size = new System.Drawing.Size(113, 224);
             this.pipeBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,9 +76,9 @@
             // ground
             // 
             this.ground.Image = global::FlappyBirdCSharp.Properties.Resources.ground;
-            this.ground.Location = new System.Drawing.Point(0, 480);
+            this.ground.Location = new System.Drawing.Point(-16, 539);
             this.ground.Name = "ground";
-            this.ground.Size = new System.Drawing.Size(924, 118);
+            this.ground.Size = new System.Drawing.Size(924, 179);
             this.ground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ground.TabIndex = 3;
             this.ground.TabStop = false;
@@ -84,13 +86,15 @@
             // scoreText
             // 
             this.scoreText.AutoSize = true;
-            this.scoreText.Location = new System.Drawing.Point(39, 23);
+            this.scoreText.BackColor = System.Drawing.Color.Transparent;
+            this.scoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreText.ForeColor = System.Drawing.Color.White;
+            this.scoreText.Location = new System.Drawing.Point(86, 54);
             this.scoreText.Name = "scoreText";
-            this.scoreText.Size = new System.Drawing.Size(47, 13);
+            this.scoreText.Size = new System.Drawing.Size(211, 55);
             this.scoreText.TabIndex = 4;
             this.scoreText.Text = "Score: 0";
             this.scoreText.UseWaitCursor = true;
-            this.scoreText.Click += new System.EventHandler(this.label1_Click);
             // 
             // gameTimer
             // 
@@ -98,22 +102,34 @@
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
             // 
+            // scoreBackground
+            // 
+            this.scoreBackground.BackColor = System.Drawing.Color.Transparent;
+            this.scoreBackground.Location = new System.Drawing.Point(42, 34);
+            this.scoreBackground.Name = "scoreBackground";
+            this.scoreBackground.Size = new System.Drawing.Size(561, 118);
+            this.scoreBackground.TabIndex = 5;
+            this.scoreBackground.TabStop = false;
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.Color.Aqua;
-            this.ClientSize = new System.Drawing.Size(872, 563);
+            this.ClientSize = new System.Drawing.Size(769, 691);
             this.Controls.Add(this.scoreText);
-            this.Controls.Add(this.ground);
-            this.Controls.Add(this.pipeBottom);
             this.Controls.Add(this.pipeTop);
             this.Controls.Add(this.bird);
+            this.Controls.Add(this.ground);
+            this.Controls.Add(this.pipeBottom);
+            this.Controls.Add(this.scoreBackground);
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.bird)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ground)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoreBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +144,7 @@
         private System.Windows.Forms.PictureBox ground;
         private System.Windows.Forms.Label scoreText;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.PictureBox scoreBackground;
     }
 }
 
