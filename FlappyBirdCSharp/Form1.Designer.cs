@@ -36,6 +36,7 @@
             this.scoreText = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.scoreBackground = new System.Windows.Forms.PictureBox();
+            this.restartButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
@@ -56,9 +57,9 @@
             // pipeTop
             // 
             this.pipeTop.Image = global::FlappyBirdCSharp.Properties.Resources.pipedown;
-            this.pipeTop.Location = new System.Drawing.Point(436, -29);
+            this.pipeTop.Location = new System.Drawing.Point(423, -94);
             this.pipeTop.Name = "pipeTop";
-            this.pipeTop.Size = new System.Drawing.Size(100, 181);
+            this.pipeTop.Size = new System.Drawing.Size(100, 246);
             this.pipeTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeTop.TabIndex = 1;
             this.pipeTop.TabStop = false;
@@ -66,7 +67,7 @@
             // pipeBottom
             // 
             this.pipeBottom.Image = global::FlappyBirdCSharp.Properties.Resources.pipe;
-            this.pipeBottom.Location = new System.Drawing.Point(327, 408);
+            this.pipeBottom.Location = new System.Drawing.Point(320, 401);
             this.pipeBottom.Name = "pipeBottom";
             this.pipeBottom.Size = new System.Drawing.Size(113, 224);
             this.pipeBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,16 +112,32 @@
             this.scoreBackground.TabIndex = 5;
             this.scoreBackground.TabStop = false;
             // 
+            // restartButton
+            // 
+            this.restartButton.BackColor = System.Drawing.Color.Gold;
+            this.restartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartButton.Location = new System.Drawing.Point(284, 237);
+            this.restartButton.Name = "restartButton";
+            this.restartButton.Size = new System.Drawing.Size(214, 63);
+            this.restartButton.TabIndex = 6;
+            this.restartButton.Text = "Play Again";
+            this.restartButton.UseVisualStyleBackColor = false;
+            this.restartButton.Visible = false;
+            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(769, 691);
+            this.Controls.Add(this.restartButton);
             this.Controls.Add(this.scoreText);
             this.Controls.Add(this.pipeTop);
             this.Controls.Add(this.bird);
             this.Controls.Add(this.ground);
             this.Controls.Add(this.pipeBottom);
             this.Controls.Add(this.scoreBackground);
+            this.MaximumSize = new System.Drawing.Size(785, 730);
+            this.MinimumSize = new System.Drawing.Size(785, 730);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
@@ -145,6 +162,7 @@
         private System.Windows.Forms.Label scoreText;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox scoreBackground;
+        private System.Windows.Forms.Button restartButton;
     }
 }
 
