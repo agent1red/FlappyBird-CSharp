@@ -6,6 +6,11 @@ Flappy Bird with gravity set. All based on the timmer event.
 Focuses on partial class, not quite abstract inheritance. Demonstrates the use of private access modifiers with methods (encapsulation).  
 Demonstrates conditional programing through use of if statements. 
 
+
+# Completed Project
+
+![](flappyBirdOld.gif)
+
 # Installation 
 
 Fork repo to Visual Studio 2019 
